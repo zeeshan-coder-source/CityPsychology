@@ -1,11 +1,13 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Phone, Mail, MapPin, Clock, Send, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
+
+const API_URL = 'http://localhost:3001/api/send-email';
 
 export default function Contact() {
   const heroRef = useRef(null);
@@ -23,10 +25,36 @@ export default function Contact() {
     message: '',
   });
 
-  const handleSubmit = (e) => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    toast.success('Thank you! We will be in touch shortly.');
-    setFormData({ name: '', email: '', phone: '', serviceType: '', clientType: '', sessionFormat: '', message: '' });
+    setIsLoading(true);
+
+    try {
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        toast.success('Message sent! We will be in touch shortly.');
+        setFormData({
+          name: '', email: '', phone: '',
+          serviceType: '', clientType: '', sessionFormat: '', message: '',
+        });
+      } else {
+        toast.error(data.error || 'Failed to send. Please try again.');
+      }
+    } catch (err) {
+      console.error('Send error:', err);
+      toast.error('Could not reach mail server. Make sure the server is running.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -253,10 +281,20 @@ export default function Contact() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full rounded-full bg-primary text-primary-foreground hover:bg-primary/90 animate-pulse-glow font-body font-medium"
+                    disabled={isLoading}
+                    className="w-full rounded-full bg-primary text-primary-foreground hover:bg-primary/90 animate-pulse-glow font-body font-medium disabled:opacity-70 disabled:cursor-not-allowed"
                   >
-                    <Send className="w-4 h-4 mr-2" />
-                    Request Consultation
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4 mr-2" />
+                        Request Consultation
+                      </>
+                    )}
                   </Button>
 
                   <p className="text-xs text-muted-foreground/60 font-body text-center">
