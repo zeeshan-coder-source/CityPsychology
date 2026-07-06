@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 import { Brain, Users, Heart, Stethoscope, Baby, Sparkles, Shield, MessageCircle, ArrowRight } from 'lucide-react';
+import Contact from './Contact';
 
 const LINEN_IMG = 'https://media.base44.com/images/public/6a04a0888946eab0cca07906/3fb221ca4_generated_7b9764f7.png';
 
@@ -151,6 +152,8 @@ export default function Services() {
           </div>
         </div>
       </section>
+
+      <Contact />
     </>
   );
 }

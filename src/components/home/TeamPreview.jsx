@@ -3,30 +3,79 @@ import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
-const PORTRAIT_1 = 'https://media.base44.com/images/public/6a04a0888946eab0cca07906/9b7c9cf98_generated_0a1a7d92.png';
-const PORTRAIT_2 = 'https://media.base44.com/images/public/6a04a0888946eab0cca07906/0c725716b_generated_e3c16872.png';
-const PORTRAIT_3 = 'https://media.base44.com/images/public/6a04a0888946eab0cca07906/ff7816c46_generated_681cf98f.png';
+// const PORTRAIT_1 = 'https://media.base44.com/images/public/6a04a0888946eab0cca07906/9b7c9cf98_generated_0a1a7d92.png';
+// const PORTRAIT_2 = 'https://media.base44.com/images/public/6a04a0888946eab0cca07906/0c725716b_generated_e3c16872.png';
+// const PORTRAIT_3 = 'https://media.base44.com/images/public/6a04a0888946eab0cca07906/ff7816c46_generated_681cf98f.png';
+
+// const team = [
+//   {
+//     name: 'Dillon Dunn, LMHC',
+//     role: 'Founder & Licensed Mental Health Counselor',
+//     specialties: 'CBT · EMDR · Family Systems · Addiction',
+//     image: PORTRAIT_1,
+//   },
+//   {
+//     name: 'Medical Director',
+//     role: 'Psychiatrist (MD)',
+//     specialties: 'Medication Management · Integrated Care',
+//     image: PORTRAIT_2,
+//   },
+//   {
+//     name: 'Associate Therapist',
+//     role: 'Licensed Clinical Social Worker',
+//     specialties: 'Individual · Couples · Play Therapy',
+//     image: PORTRAIT_3,
+//   },
+// ];
+
+import img1 from '@/assets/1.webp';
+import img2 from '@/assets/2.webp';
+import img3 from '@/assets/3.webp';
+import img4 from '@/assets/4.webp';
+import img5 from '@/assets/5.webp';
+import img6 from '@/assets/6.webp';
 
 const team = [
   {
-    name: 'Dillon Dunn, LMHC',
+    name: 'Dillon A Steinman, LMHC, QS',
     role: 'Founder & Licensed Mental Health Counselor',
-    specialties: 'CBT · EMDR · Family Systems · Addiction',
-    image: PORTRAIT_1,
+    specialties: 'Youth & Family Therapy · Inpatient/Outpatient Care · Clinical Supervision',
+    image: img1,
   },
   {
-    name: 'Medical Director',
-    role: 'Psychiatrist (MD)',
-    specialties: 'Medication Management · Integrated Care',
-    image: PORTRAIT_2,
+    name: 'Peter Copan',
+    role: 'Registered Mental Health Counselor Intern',
+    specialties: 'Trauma Recovery · Self-Discovery · Neuroscience-Informed Therapy',
+    image: img2,
   },
   {
-    name: 'Associate Therapist',
-    role: 'Licensed Clinical Social Worker',
-    specialties: 'Individual · Couples · Play Therapy',
-    image: PORTRAIT_3,
+    name: 'Michelle Cook, LMHC',
+    role: 'Licensed Mental Health Counselor',
+    specialties: 'EMDR · Trauma Processing · Christian Faith-Integrated Counseling',
+    image: img3,
+  },
+  {
+    name: 'Terrini Woods, LMHC',
+    role: 'Licensed Mental Health Counselor',
+    specialties: 'CBT · SFBT · Family & Grief Counseling · Faith-Based Support',
+    image: img4,
+  },
+  {
+    name: 'Jess Fuentes, LMHC',
+    role: 'Licensed Mental Health Counselor',
+    specialties: 'Couples Therapy · Anxiety & Depression · Christian-Rooted Psychotherapy',
+    image: img5,
+  },
+  {
+    name: 'Snjezana Mileta',
+    role: 'Psychotherapist',
+    specialties: 'Psychodynamic Therapy · CBT · DBT · EMDR · Attachment-Focused Care',
+    image: img6,
   },
 ];
+
+
+
 
 export default function TeamPreview() {
   const ref = useRef(null);

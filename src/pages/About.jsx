@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight, CheckCircle } from 'lucide-react';
+import Contact from './Contact';
 
 const OFFICE_IMG = 'https://media.base44.com/images/public/6a04a0888946eab0cca07906/f7aed5b5b_generated_84790256.png';
 const TEXTURE_IMG = 'https://media.base44.com/images/public/6a04a0888946eab0cca07906/6ad9ecccc_generated_87ea5579.png';
@@ -187,6 +188,8 @@ export default function About() {
           </Link>
         </div>
       </section>
+
+      <Contact />
     </>
   );
 }

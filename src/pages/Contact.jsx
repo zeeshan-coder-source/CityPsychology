@@ -160,7 +160,7 @@ export default function Contact() {
                 transition={{ delay: 0.4 }}
                 className="rounded-xl overflow-hidden border border-border h-56"
               >
-                <iframe
+                {/* <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.5!2d-80.0532!3d26.6962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDQxJzQ2LjMiTiA4MMKwMDMnMTEuNSJX!5e0!3m2!1sen!2sus!4v1"
                   width="100%"
                   height="100%"
@@ -169,7 +169,18 @@ export default function Contact() {
                   loading="lazy"
                   className="grayscale opacity-80"
                   title="City Psychology Location"
-                />
+                /> */}
+
+                {/* <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d28948.356905706773!2d67.0793728!3d24.9135104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x88d8d64615649679%3A0xb87d7279a42a2f37!2s1818%20S%20Australian%20Ave%20%23404%2C%20West%20Palm%20Beach%2C%20FL%2033409%2C%20USA!3m2!1d26.696874299999998!2d-80.0716264!5e0!3m2!1sen!2s!4v1783093658727!5m2!1sen!2s" width="600" height="450" style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe> */}
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d28948.356905706773!2d67.0793728!3d24.9135104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x88d8d64615649679%3A0xb87d7279a42a2f37!2s1818%20S%20Australian%20Ave%20%23404%2C%20West%20Palm%20Beach%2C%20FL%2033409%2C%20USA!3m2!1d26.696874299999998!2d-80.0716264!5e0!3m2!1sen!2s!4v1783093658727!5m2!1sen!2s"
+                  width="600"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                ></iframe>
               </motion.div>
             </div>
 

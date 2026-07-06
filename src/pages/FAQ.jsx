@@ -8,6 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import Contact from './Contact';
 
 const faqs = [
   {
@@ -124,6 +125,8 @@ export default function FAQ() {
           </div>
         </div>
       </section>
+
+      <Contact />
     </>
   );
 }
